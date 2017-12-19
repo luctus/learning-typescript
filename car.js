@@ -17,6 +17,12 @@ var Engine = /** @class */ (function () {
     Engine.prototype.print = function () {
         console.log(this.horsePower + " - " + this.engineType);
     };
+    Engine.prototype.start = function (callback) {
+        var _this = this;
+        window.setTimeout(function () {
+            callback(true, _this.engineType);
+        }, 2000);
+    };
     return Engine;
 }());
 var Car = /** @class */ (function () {
@@ -69,4 +75,15 @@ window.onload = function () {
     c.speed();
     var e2 = new Engine(1500, "V7");
     c.engine = e2;
+    var e3 = new Engine(2900, "V8");
+    var t = new Truck(e3, true);
+    t.start();
+    t.engine.start(function (status, engineType) {
+        if (status) {
+            console.log("Engine directly started for " + engineType);
+        }
+        else {
+            console.log("Engine directly could not be started for " + engineType);
+        }
+    });
 };
