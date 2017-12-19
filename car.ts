@@ -10,7 +10,7 @@ class Car{
   private _engine: Engine;
 
   constructor(engine: Engine){
-    this._engine = engine;
+    this.engine = engine;
     console.log("Car created");
     engine.print();
   }
@@ -35,6 +35,16 @@ class Car{
   speed(finalSpeed?: number): void {
     console.log("new speed: " + (finalSpeed || 10));
   }
+}
+
+class Truck extends Car {
+  fourByFour: boolean;
+
+  constructor(engine: Engine, fourByFour: boolean){
+    super(engine);
+    this.fourByFour = fourByFour;
+  }
+
 }
 
 window.onload = function() {

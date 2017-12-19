@@ -1,4 +1,14 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var Engine = /** @class */ (function () {
     function Engine(horsePower, engineType) {
         this.horsePower = horsePower;
@@ -11,7 +21,7 @@ var Engine = /** @class */ (function () {
 }());
 var Car = /** @class */ (function () {
     function Car(engine) {
-        this._engine = engine;
+        this.engine = engine;
         console.log("Car created");
         engine.print();
     }
@@ -40,6 +50,15 @@ var Car = /** @class */ (function () {
     };
     return Car;
 }());
+var Truck = /** @class */ (function (_super) {
+    __extends(Truck, _super);
+    function Truck(engine, fourByFour) {
+        var _this = _super.call(this, engine) || this;
+        _this.fourByFour = fourByFour;
+        return _this;
+    }
+    return Truck;
+}(Car));
 window.onload = function () {
     var e = new Engine(2500, "V8");
     var c = new Car(e);
