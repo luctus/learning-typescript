@@ -17,19 +17,20 @@ class Engine implements IEngine {
 
 class Car{
 
-  private _engine: Engine;
+  // Now that we wrote the IEngine interface, we can use it as a type too
+  private _engine: IEngine;
 
-  constructor(engine: Engine){
+  constructor(engine: IEngine){
     this.engine = engine;
     console.log("Car created");
     engine.print();
   }
 
-  get engine(): Engine {
+  get engine(): IEngine {
     return this._engine;
   }
 
-  set engine(value: Engine) {
+  set engine(value: IEngine) {
     if ( value == undefined ) throw 'Supply an Engine!';
     this._engine = value;
     console.log("New engine");
