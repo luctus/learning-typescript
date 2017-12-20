@@ -1,4 +1,9 @@
-class Engine{
+interface IEngine {
+  print(): void;
+  start(callback: (startStatus: boolean, engineType: string) => void): void;
+}
+
+class Engine implements IEngine {
   constructor(public horsePower: number, public engineType: string) { }
   print(): void {
     console.log(this.horsePower + " - " + this.engineType);
