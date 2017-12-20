@@ -1,6 +1,13 @@
+interface IRectangle {
+  height: number;
+  width: number;
+  getArea(): number;
+}
+
 namespace Shapes {
-  export class Rectangle {
-    constructor (public height: number, public width: number){ }
+  export class Rectangle implements IRectangle {
+    constructor (public height: number, public width: number) { }
+    getArea(): number { return this.height * this.width; }
   }
 }
 

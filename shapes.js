@@ -6,6 +6,7 @@ var Shapes;
             this.height = height;
             this.width = width;
         }
+        Rectangle.prototype.getArea = function () { return this.height * this.width; };
         return Rectangle;
     }());
     Shapes.Rectangle = Rectangle;
