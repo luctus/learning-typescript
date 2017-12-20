@@ -9,7 +9,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Engine = /** @class */ (function () {
+var Engine = (function () {
     function Engine(horsePower, engineType) {
         this.horsePower = horsePower;
         this.engineType = engineType;
@@ -25,7 +25,7 @@ var Engine = /** @class */ (function () {
     };
     return Engine;
 }());
-var Car = /** @class */ (function () {
+var Car = (function () {
     function Car(engine) {
         this.engine = engine;
         console.log("Car created");
@@ -56,7 +56,7 @@ var Car = /** @class */ (function () {
     };
     return Car;
 }());
-var Truck = /** @class */ (function (_super) {
+var Truck = (function (_super) {
     __extends(Truck, _super);
     function Truck(engine, fourByFour) {
         var _this = _super.call(this, engine) || this;
